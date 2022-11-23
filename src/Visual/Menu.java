@@ -13,11 +13,10 @@ import java.awt.Color;
  */
 public class Menu extends javax.swing.JFrame {
 
-    MenuLateralCadastro menuLateral = new MenuLateralCadastro();
+    
     public Menu() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        menuLateral.setVisible(false);
     }
 
     /**
@@ -31,9 +30,6 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         txtIconLogo = new javax.swing.JLabel();
-        jpCdCliente = new javax.swing.JPanel();
-        txtCadastro = new javax.swing.JLabel();
-        txtIconCadastro = new javax.swing.JLabel();
         jpCdCadastro = new javax.swing.JPanel();
         txtCadastro3 = new javax.swing.JLabel();
         txtIconCadastro3 = new javax.swing.JLabel();
@@ -49,35 +45,11 @@ public class Menu extends javax.swing.JFrame {
 
         txtIconLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo Pizzaria Bela Nona - Clássica Napolitana (200 x 153 px).png"))); // NOI18N
 
-        jpCdCliente.setBackground(new java.awt.Color(102, 102, 102));
-
-        txtCadastro.setText("Cadastro ");
-
-        txtIconCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/cadastro.png"))); // NOI18N
-
-        javax.swing.GroupLayout jpCdClienteLayout = new javax.swing.GroupLayout(jpCdCliente);
-        jpCdCliente.setLayout(jpCdClienteLayout);
-        jpCdClienteLayout.setHorizontalGroup(
-            jpCdClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpCdClienteLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(txtIconCadastro)
-                .addGap(10, 10, 10)
-                .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpCdClienteLayout.setVerticalGroup(
-            jpCdClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpCdClienteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpCdClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIconCadastro))
-                .addGap(15, 15, 15))
-        );
-
         jpCdCadastro.setBackground(new java.awt.Color(102, 102, 102));
         jpCdCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jpCdCadastroMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jpCdCadastroMouseEntered(evt);
             }
@@ -96,9 +68,9 @@ public class Menu extends javax.swing.JFrame {
             jpCdCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpCdCadastroLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(txtIconCadastro3)
+                .addComponent(txtIconCadastro3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(10, 10, 10)
-                .addComponent(txtCadastro3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCadastro3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpCdCadastroLayout.setVerticalGroup(
@@ -106,8 +78,8 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpCdCadastroLayout.createSequentialGroup()
                 .addContainerGap(15, Short.MAX_VALUE)
                 .addGroup(jpCdCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCadastro3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIconCadastro3))
+                    .addComponent(txtCadastro3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtIconCadastro3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
 
@@ -115,8 +87,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpCdCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(txtIconLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(txtIconLogo)
             .addComponent(jpCdCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -124,10 +95,8 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(txtIconLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jpCdCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpCdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 375, Short.MAX_VALUE))
+                .addComponent(jpCdCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 433, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -135,7 +104,7 @@ public class Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 1075, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,7 +117,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jpCdCadastroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpCdCadastroMouseEntered
         jpCdCadastro.setBackground(new Color(151, 151, 151));
-        menuLateral.setVisible(true);
+        
     }//GEN-LAST:event_jpCdCadastroMouseEntered
 
     private void jpCdCadastroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpCdCadastroMouseExited
@@ -156,8 +125,13 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jpCdCadastroMouseExited
 
     private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
-        menuLateral.setVisible(false);
+
     }//GEN-LAST:event_formMouseEntered
+
+    private void jpCdCadastroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpCdCadastroMouseClicked
+        MenuLateralCadastro menuLateral = new MenuLateralCadastro();
+        menuLateral.setVisible(true);
+    }//GEN-LAST:event_jpCdCadastroMouseClicked
 
     /**
      * @param args the command line arguments
@@ -198,10 +172,7 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jpCdCadastro;
-    private javax.swing.JPanel jpCdCliente;
-    private javax.swing.JLabel txtCadastro;
     private javax.swing.JLabel txtCadastro3;
-    private javax.swing.JLabel txtIconCadastro;
     private javax.swing.JLabel txtIconCadastro3;
     private javax.swing.JLabel txtIconLogo;
     // End of variables declaration//GEN-END:variables

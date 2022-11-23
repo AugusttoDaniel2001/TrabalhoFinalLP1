@@ -426,11 +426,11 @@ public class MenuLateralCadastro extends javax.swing.JPanel {
     }//GEN-LAST:event_jpForneceMouseExited
 
     private void jpForneceMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpForneceMousePressed
-        // TODO add your handling code here:
+        jpFornecedor.setBackground(new Color(151, 151, 151));
     }//GEN-LAST:event_jpForneceMousePressed
 
     private void jpFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpFornecedorMouseEntered
-        // TODO add your handling code here:
+        jpFornecedor.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_jpFornecedorMouseEntered
 
     private void jpFornecedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpFornecedorMouseExited
