@@ -13,11 +13,10 @@ import java.awt.Color;
  */
 public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Inicial
-     */
+    MenuLateralCadastro menuLateral = new MenuLateralCadastro();
     public Menu() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
         menuLateral.setVisible(false);
     }
 
@@ -38,33 +37,13 @@ public class Menu extends javax.swing.JFrame {
         jpCdCadastro = new javax.swing.JPanel();
         txtCadastro3 = new javax.swing.JLabel();
         txtIconCadastro3 = new javax.swing.JLabel();
-        menuLateral = new javax.swing.JPanel();
-        jpFornece = new javax.swing.JPanel();
-        txtIconFornece = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jpFornecedor = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jpFuncionario = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jpInsumo = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jpInsumoProduto = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jpItemPedido = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jpPedido = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jpProduto = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                formMouseEntered(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -148,352 +127,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jpCdCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jpCdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        menuLateral.setBackground(new java.awt.Color(102, 102, 102));
-        menuLateral.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                menuLateralMouseExited(evt);
-            }
-        });
-
-        jpFornece.setBackground(new java.awt.Color(102, 102, 102));
-        jpFornece.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jpForneceMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jpForneceMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jpForneceMousePressed(evt);
-            }
-        });
-
-        txtIconFornece.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/fornecedor.png"))); // NOI18N
-
-        jLabel2.setText("Fornece");
-
-        javax.swing.GroupLayout jpForneceLayout = new javax.swing.GroupLayout(jpFornece);
-        jpFornece.setLayout(jpForneceLayout);
-        jpForneceLayout.setHorizontalGroup(
-            jpForneceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpForneceLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(txtIconFornece)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
-        jpForneceLayout.setVerticalGroup(
-            jpForneceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpForneceLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jpForneceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtIconFornece)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        jpFornecedor.setBackground(new java.awt.Color(102, 102, 102));
-        jpFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jpFornecedorMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jpFornecedorMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jpFornecedorMousePressed(evt);
-            }
-        });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/fornecedor.png"))); // NOI18N
-
-        jLabel3.setText("Fornecedor");
-
-        javax.swing.GroupLayout jpFornecedorLayout = new javax.swing.GroupLayout(jpFornecedor);
-        jpFornecedor.setLayout(jpFornecedorLayout);
-        jpFornecedorLayout.setHorizontalGroup(
-            jpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpFornecedorLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpFornecedorLayout.setVerticalGroup(
-            jpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpFornecedorLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jpFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        jpFuncionario.setBackground(new java.awt.Color(102, 102, 102));
-        jpFuncionario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jpFuncionarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jpFuncionarioMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jpFuncionarioMousePressed(evt);
-            }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/funcionarios.png"))); // NOI18N
-
-        jLabel5.setText("Funcionario");
-
-        javax.swing.GroupLayout jpFuncionarioLayout = new javax.swing.GroupLayout(jpFuncionario);
-        jpFuncionario.setLayout(jpFuncionarioLayout);
-        jpFuncionarioLayout.setHorizontalGroup(
-            jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpFuncionarioLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel4)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpFuncionarioLayout.setVerticalGroup(
-            jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpFuncionarioLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jpFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        jpInsumo.setBackground(new java.awt.Color(102, 102, 102));
-        jpInsumo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jpInsumoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jpInsumoMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jpInsumoMousePressed(evt);
-            }
-        });
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/estoque.png"))); // NOI18N
-
-        jLabel7.setText("Insumo");
-
-        javax.swing.GroupLayout jpInsumoLayout = new javax.swing.GroupLayout(jpInsumo);
-        jpInsumo.setLayout(jpInsumoLayout);
-        jpInsumoLayout.setHorizontalGroup(
-            jpInsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpInsumoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel6)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpInsumoLayout.setVerticalGroup(
-            jpInsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpInsumoLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jpInsumoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        jpInsumoProduto.setBackground(new java.awt.Color(102, 102, 102));
-        jpInsumoProduto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jpInsumoProdutoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jpInsumoProdutoMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jpInsumoProdutoMousePressed(evt);
-            }
-        });
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/estoque.png"))); // NOI18N
-
-        jLabel9.setText("InsumoProduto");
-
-        javax.swing.GroupLayout jpInsumoProdutoLayout = new javax.swing.GroupLayout(jpInsumoProduto);
-        jpInsumoProduto.setLayout(jpInsumoProdutoLayout);
-        jpInsumoProdutoLayout.setHorizontalGroup(
-            jpInsumoProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpInsumoProdutoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel8)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpInsumoProdutoLayout.setVerticalGroup(
-            jpInsumoProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpInsumoProdutoLayout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addGroup(jpInsumoProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
-        );
-
-        jpItemPedido.setBackground(new java.awt.Color(102, 102, 102));
-        jpItemPedido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jpItemPedidoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jpItemPedidoMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jpItemPedidoMousePressed(evt);
-            }
-        });
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/pedido.png"))); // NOI18N
-
-        jLabel11.setText("ItemPedido");
-
-        javax.swing.GroupLayout jpItemPedidoLayout = new javax.swing.GroupLayout(jpItemPedido);
-        jpItemPedido.setLayout(jpItemPedidoLayout);
-        jpItemPedidoLayout.setHorizontalGroup(
-            jpItemPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpItemPedidoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel10)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpItemPedidoLayout.setVerticalGroup(
-            jpItemPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpItemPedidoLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jpItemPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        jpPedido.setBackground(new java.awt.Color(102, 102, 102));
-        jpPedido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jpPedidoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jpPedidoMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jpPedidoMousePressed(evt);
-            }
-        });
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/pedido.png"))); // NOI18N
-
-        jLabel13.setText("Pedido");
-
-        javax.swing.GroupLayout jpPedidoLayout = new javax.swing.GroupLayout(jpPedido);
-        jpPedido.setLayout(jpPedidoLayout);
-        jpPedidoLayout.setHorizontalGroup(
-            jpPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPedidoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel12)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpPedidoLayout.setVerticalGroup(
-            jpPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpPedidoLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jpPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        jpProduto.setBackground(new java.awt.Color(102, 102, 102));
-        jpProduto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jpProdutoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jpProdutoMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jpProdutoMousePressed(evt);
-            }
-        });
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/pedido.png"))); // NOI18N
-
-        jLabel15.setText("Produto");
-
-        javax.swing.GroupLayout jpProdutoLayout = new javax.swing.GroupLayout(jpProduto);
-        jpProduto.setLayout(jpProdutoLayout);
-        jpProdutoLayout.setHorizontalGroup(
-            jpProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpProdutoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jpProdutoLayout.setVerticalGroup(
-            jpProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpProdutoLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jpProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(15, 15, 15))
-        );
-
-        javax.swing.GroupLayout menuLateralLayout = new javax.swing.GroupLayout(menuLateral);
-        menuLateral.setLayout(menuLateralLayout);
-        menuLateralLayout.setHorizontalGroup(
-            menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpInsumo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpInsumoProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpItemPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpFornece, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        menuLateralLayout.setVerticalGroup(
-            menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuLateralLayout.createSequentialGroup()
-                .addComponent(jpFornece, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpInsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpInsumoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpItemPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jpProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 375, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -502,16 +136,11 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(menuLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 846, Short.MAX_VALUE))
+                .addGap(0, 1075, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(158, Short.MAX_VALUE)
-                .addComponent(menuLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -526,114 +155,9 @@ public class Menu extends javax.swing.JFrame {
         jpCdCadastro.setBackground(new Color(102, 102, 102));
     }//GEN-LAST:event_jpCdCadastroMouseExited
 
-    private void jpForneceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpForneceMouseEntered
-        jpFornece.setBackground(new Color(151, 151, 151));
-    }//GEN-LAST:event_jpForneceMouseEntered
-
-    private void jpForneceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpForneceMouseExited
-        jpFornece.setBackground(new Color(102, 102, 102));
-    }//GEN-LAST:event_jpForneceMouseExited
-
-    private void jpForneceMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpForneceMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpForneceMousePressed
-
-    private void jpFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpFornecedorMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpFornecedorMouseEntered
-
-    private void jpFornecedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpFornecedorMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpFornecedorMouseExited
-
-    private void jpFornecedorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpFornecedorMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpFornecedorMousePressed
-
-    private void jpFuncionarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpFuncionarioMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpFuncionarioMouseEntered
-
-    private void jpFuncionarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpFuncionarioMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpFuncionarioMouseExited
-
-    private void jpFuncionarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpFuncionarioMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpFuncionarioMousePressed
-
-    private void jpInsumoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInsumoMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpInsumoMouseEntered
-
-    private void jpInsumoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInsumoMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpInsumoMouseExited
-
-    private void jpInsumoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInsumoMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpInsumoMousePressed
-
-    private void jpInsumoProdutoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInsumoProdutoMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpInsumoProdutoMouseEntered
-
-    private void jpInsumoProdutoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInsumoProdutoMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpInsumoProdutoMouseExited
-
-    private void jpInsumoProdutoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpInsumoProdutoMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpInsumoProdutoMousePressed
-
-    private void jpItemPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpItemPedidoMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpItemPedidoMouseEntered
-
-    private void jpItemPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpItemPedidoMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpItemPedidoMouseExited
-
-    private void jpItemPedidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpItemPedidoMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpItemPedidoMousePressed
-
-    private void jpPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpPedidoMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpPedidoMouseEntered
-
-    private void jpPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpPedidoMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpPedidoMouseExited
-
-    private void jpPedidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpPedidoMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpPedidoMousePressed
-
-    private void jpProdutoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpProdutoMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpProdutoMouseEntered
-
-    private void jpProdutoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpProdutoMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jpProdutoMouseExited
-
-    private void jpProdutoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpProdutoMousePressed
-
-    }//GEN-LAST:event_jpProdutoMousePressed
-
-    private void menuLateralMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuLateralMouseExited
+    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
         menuLateral.setVisible(false);
-        jpFornece.setVisible(false);
-        jpFornecedor.setVisible(false);
-        jpFuncionario.setVisible(false);
-        jpInsumo.setVisible(false);
-        jpInsumoProduto.setVisible(false);
-        jpItemPedido.setVisible(false);
-        jpPedido.setVisible(false);
-        jpProduto.setVisible(false);
-
-    }//GEN-LAST:event_menuLateralMouseExited
+    }//GEN-LAST:event_formMouseEntered
 
     /**
      * @param args the command line arguments
@@ -672,38 +196,13 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jpCdCadastro;
     private javax.swing.JPanel jpCdCliente;
-    private javax.swing.JPanel jpFornece;
-    private javax.swing.JPanel jpFornecedor;
-    private javax.swing.JPanel jpFuncionario;
-    private javax.swing.JPanel jpInsumo;
-    private javax.swing.JPanel jpInsumoProduto;
-    private javax.swing.JPanel jpItemPedido;
-    private javax.swing.JPanel jpPedido;
-    private javax.swing.JPanel jpProduto;
-    private javax.swing.JPanel menuLateral;
     private javax.swing.JLabel txtCadastro;
     private javax.swing.JLabel txtCadastro3;
     private javax.swing.JLabel txtIconCadastro;
     private javax.swing.JLabel txtIconCadastro3;
-    private javax.swing.JLabel txtIconFornece;
     private javax.swing.JLabel txtIconLogo;
     // End of variables declaration//GEN-END:variables
 }
